@@ -7,11 +7,274 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Bento grid</title>
-  <link rel="stylesheet" href="/index.css">
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Edu+NSW+ACT+Foundation&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+:root{
+    --fs : "Playfair", serif;
+    --fw : 600;
+    --fs :18px;
+    --Purple-100: hsl(254, 88%, 90%);
+    --Purple-500: hsl(256, 67%, 59%);
+
+    --Yellow-100: hsl(31, 66%, 93%);
+    --Yellow-500: hsl(39, 100%, 71%);
+
+    --White: hsl(0, 0%, 88%);
+    --Black: hsl(0, 0%, 7%);
+}
+*{
+    font-family: "Playfair", serif;
+}
+/*spans*/
+.quicker{
+    color: var(--Purple-500);
+}
+.x10{
+    color: var(--Yellow-500);
+    font-size: 60px;
+    display: inline;
+}
+.intter{
+    border-radius: .3rem;
+}
+.headers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.imgs-21{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    font-weight: 500;
+    font-size: 45px;
+}
+h2{
+    font-weight: var(--fw);
+    font-size: 30px;
+}
+*{
+    box-sizing: content-box;
+    padding: 0;
+    margin: 0;
+}
+img{
+    width: 70%;
+    display: block;
+}
+.yellow{
+    background-color: var(--Yellow-500);
+}
+.purpel{
+    background-color: var(--Purple-500);
+}
+.light-purple{
+    background-color: var(--Purple-100);
+}
+.white{
+    background-color: var(--White);
+}
+.light-yellow{
+    background-color: var(--Yellow-100);
+}
+.container{
+    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 13rem 13rem 13rem;
+    grid-template-areas: 'column1 column2 column3'
+    'column1 column2 column3'
+    'column1 column4 column4';
+    margin-inline: auto;
+    max-width: 60rem;
+    gap: 20px;
+}
+.container >*,.container2{
+    display: grid;
+}
+.container2{
+    gap:10px;
+}
+.container2{
+    grid-template-columns: 1fr 1fr;
+}
+
+.column1{
+    grid-area: column1;
+    gap: 10px;
+}
+.column2{
+    grid-area: column2;
+}
+.column3{
+    grid-area: column3;
+}
+.column4{
+    grid-area: column4;
+    grid-template-columns: 1fr 2fr;
+}
+/*doing the cards designe*/
+.column11{
+    padding: 20px;
+    display: grid;
+    place-content: center;
+    gap: 20px;
+}
+.column21{
+    padding: 20px;
+    display: grid;
+    place-content: center;
+    gap: 10px;
+    color: white;
+}
+.column12{
+    padding: 10px;
+    display: grid;
+    gap: 15px;
+    place-content: center;
+}
+.column3{
+    padding:15px;
+    overflow: hidden;
+}
+.column2{
+    gap: 10px;
+}
+.column3>img{
+    width: 200px;
+    position: relative;
+    left: 90px;
+    
+}
+.column23{
+    position: relative;
+    overflow: hidden;
+}
+.column23 img{
+    position: absolute;
+    max-width: 150px;
+    left: 10px;
+    bottom: -90px;
+    
+}
+.column22{
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.column22 img{
+    position: relative;
+    left: 80px;
+
+}
+.column4{
+    gap: 10px;
+}
+.column42{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    padding: 10px;
+    color: white;
+}
+.column41{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.column41 h1{
+    font-size: 60px;
+}
+.column41 img{
+    margin-top: 10px;
+}
+
+
+/* Mobile styles */
+@media (max-width: 375px) {
+    .container {
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-rows: auto; /* Rows adjust to content */
+        grid-template-areas: 
+            'column2'
+            'column3'
+            'column4'
+            'column1';
+        gap: 10px;
+        max-width: 100%; /* Full width */
+        margin: 10px; /* Smaller margin */
+    }
+
+    .column23 {
+        position: static; /* Reset positioning */
+        overflow: hidden; /* Allow content to flow naturally */
+    }
+
+    .column23 img {
+        position: static; /* Reset positioning */
+        max-width: 100%; /* Full width */
+        left: 0; /* Reset horizontal positioning */
+        bottom: 0; /* Reset vertical positioning */
+        margin-top: 10px; /* Add spacing if needed */
+    }
+
+    h1 {
+        font-size: 30px; /* Smaller font size for mobile */
+    }
+
+    h2 {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    .x10 {
+        font-size: 40px; /* Adjust large text size */
+    }
+
+    img {
+        width: 100%; /* Full width images */
+    }
+
+    .column2 {
+        height: auto; /* Adjust height to content */
+    }
+
+    .column3 img {
+        width: 100%; /* Full width images */
+        left: 0; /* Reset positioning */
+    }
+
+    .column23 img {
+        max-width: 100%; /* Full width images */
+        left: 0; /* Reset positioning */
+        bottom: 0; /* Reset positioning */
+    }
+
+    .column22 img {
+        left: 0; /* Reset positioning */
+    }
+
+    .column41 h1 {
+        font-size: 40px; /* Smaller font size for mobile */
+    }
+
+    .column42 {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+    .column4{
+        grid-template-columns: 1fr;
+    }
+    .container2{
+        grid-template-columns: 1fr;
+    }
+    
+}
   </style>
 </head>
 <body>
